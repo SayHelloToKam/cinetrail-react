@@ -43,7 +43,7 @@
   margin-bottom: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  /* justify-content: space-around; */
 }
 .genre-container {
   display: flex;

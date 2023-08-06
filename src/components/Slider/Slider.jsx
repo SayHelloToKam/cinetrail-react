@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-
+import StarRatings from "react-star-ratings";
+import Genres from "../Genres/Genres";
 import "./Slider.css";
 
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
@@ -16,7 +17,10 @@ function Slider() {
           import.meta.env.VITE_APP_API_KEY
         }`
       )
-      .then((res) => setUpcomingMovies(res.data.results))
+      .then((res) => {
+        //console.log(res.data.results);
+        setUpcomingMovies(res.data.results);
+      })
       .catch((err) => console.log(err));
   }, []);
 
@@ -61,9 +65,26 @@ function Slider() {
             className='right-arrow'
             onClick={handleRightClick}
           />
+          <div className='slider-info'>
+            <h1>{upcomingMovies[movieIndex]?.title}</h1>
+            <p className='slider-description'>
+              {upcomingMovies[movieIndex]?.overview.slice(0, 130)}...
+            </p>
+            <Genres genreIds={upcomingMovies[movieIndex]?.genre_ids} />
+            <p>Release Date: {upcomingMovies[movieIndex]?.release_date}</p>
+            {upcomingMovies[movieIndex] && (
+              <StarRatings
+                rating={upcomingMovies[movieIndex]?.vote_average / 2}
+                starRatedColor='red'
+                starDimension='18px'
+                starSpacing='1px'
+                numberOfStars={5}
+                name='rating'
+              />
+            )}
+          </div>
         </div>
       </div>
-      <h1>MovieIndex: {movieIndex}</h1>
     </>
   );
 }
