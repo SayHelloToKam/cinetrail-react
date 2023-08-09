@@ -26,7 +26,7 @@ export default function MovieCard({
         : null,
   };
 
-  const hyperRef = `/movieDetails/${id}`;
+  const hyperRef = `/moviedetails/${id}`;
 
   return (
     <Link className={cardStyle} to={hyperRef}>
@@ -48,6 +48,7 @@ export default function MovieCard({
           <p>Rating:&nbsp; {Math.round(movie?.vote_average / 2)}</p>
         </div>
       </div>
+      {cardStyle === "top-rated-card" ? <p>{movie?.title}</p> : null}
     </Link>
   );
 }

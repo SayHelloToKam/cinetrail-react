@@ -15,7 +15,8 @@ export default function PopularMovies() {
         }&page=${currentPage}`
       )
       .then((res) => {
-        console.log(res.data.results), setPopularMovies(res.data.results);
+        //console.log(res.data.results),
+        setPopularMovies(res.data.results);
       })
       .catch((err) => console.loge(err));
   }, [currentPage]);
@@ -25,12 +26,13 @@ export default function PopularMovies() {
       <div className='popular-cards-wrapper'>
         {popularMovies.map((movie) => (
           <MovieCard
+            //passing these props to movieCard
             key={movie.id}
             movie={movie}
-            height={"300px"}
-            width={"200px"}
+            height={"400px"}
+            width={"300px"}
             cardStyle={"popular-card"}
-            radius={"16px"}
+            radius={"8px"}
             imgSrc={movie?.poster_path}
             id={movie.id}
           />

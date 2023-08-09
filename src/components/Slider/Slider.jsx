@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 import StarRatings from "react-star-ratings";
 import Genres from "../Genres/Genres";
 import "./Slider.css";
@@ -72,16 +73,24 @@ function Slider() {
             </p>
             <Genres genreIds={upcomingMovies[movieIndex]?.genre_ids} />
             <p>Release Date: {upcomingMovies[movieIndex]?.release_date}</p>
-            {upcomingMovies[movieIndex] && (
-              <StarRatings
-                rating={upcomingMovies[movieIndex]?.vote_average / 2}
-                starRatedColor='red'
-                starDimension='18px'
-                starSpacing='1px'
-                numberOfStars={5}
-                name='rating'
-              />
-            )}
+            <div className='rating'>
+              {upcomingMovies[movieIndex] && (
+                <StarRatings
+                  rating={upcomingMovies[movieIndex]?.vote_average / 2}
+                  starRatedColor='red'
+                  starDimension='18px'
+                  starSpacing='1px'
+                  numberOfStars={5}
+                  name='rating'
+                />
+              )}
+            </div>
+            <Link
+              to={`/moviedetails/${upcomingMovies[movieIndex]?.id}`}
+              className='see-details'
+            >
+              See Details
+            </Link>
           </div>
         </div>
       </div>

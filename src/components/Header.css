@@ -1,0 +1,95 @@
+.header-container {
+  color: var(--white);
+  height: var(--header-height);
+  background-color: var(--transparent-bg);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+.header-light {
+  background-color: var(--white);
+}
+.logo {
+  color: var(--red);
+  font-size: 2rem;
+  font-weight: bold;
+}
+.header-buttons-container {
+  display: flex;
+  align-items: center;
+}
+.search-container {
+  width: 40%;
+  position: relative;
+  text-align: right;
+}
+
+.search-results-container {
+  animation: input 0.5s ease 0s 1 normal forwards;
+  background-color: gray;
+  height: 300px;
+  left: 0;
+  overflow: scroll;
+  position: absolute;
+  top: 30px;
+  width: 100%;
+}
+
+.search-results-item {
+  background-color: var(--dark-bg);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  height: 50px;
+  justify-content: space-between;
+  margin-bottom: 2px;
+  padding-right: 10px;
+}
+
+.search-input {
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  width: 100%;
+  background-color: var(--black);
+  color: var(--grey-text);
+}
+
+.result-img {
+  height: 50px;
+  width: 80px;
+}
+
+.theme-buttons {
+  background-color: var(--black);
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: solid 1px var(--grey);
+}
+.theme-icon {
+  font-size: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 4px;
+}
+.theme-icon-active {
+  background-color: var(--red);
+  padding: 2px;
+}
+
+.create-account-btn {
+  background-color: var(--red);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  color: var(--white);
+  margin-left: 20px;
+}
