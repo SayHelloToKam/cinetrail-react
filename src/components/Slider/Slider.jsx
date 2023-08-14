@@ -71,7 +71,13 @@ function Slider() {
             <p className='slider-description'>
               {upcomingMovies[movieIndex]?.overview.slice(0, 130)}...
             </p>
-            <Genres genreIds={upcomingMovies[movieIndex]?.genre_ids} />
+            <Genres
+              genreIds={
+                upcomingMovies[movieIndex]
+                  ? upcomingMovies[movieIndex]?.genre_ids
+                  : []
+              }
+            />
             <p>Release Date: {upcomingMovies[movieIndex]?.release_date}</p>
             <div className='rating'>
               {upcomingMovies[movieIndex] && (

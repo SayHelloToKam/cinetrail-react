@@ -13,8 +13,8 @@ export default function TopRatedMovies() {
         }`
       )
       .then((res) => {
-        console.log(res.data.results),
-          setTopRatedMovies(res.data.results.slice(0, 11));
+        // console.log(res.data.results),
+        setTopRatedMovies(res.data.results.slice(0, 11));
       })
       .catch((err) => console.loge(err));
   }, []);
@@ -26,8 +26,8 @@ export default function TopRatedMovies() {
           <MovieCard
             key={movie.id}
             movie={movie}
-            width={"300px"}
-            height={"200px"}
+            width={"200px"}
+            height={"100px"}
             radius={"4px"}
             imgSrc={movie.backdrop_path}
             id={movie?.id}

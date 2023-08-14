@@ -93,3 +93,31 @@
   color: var(--white);
   margin-left: 20px;
 }
+
+.profile-img {
+  border-radius: 50%;
+  cursor: pointer;
+  height: 30px;
+  width: 30px;
+}
+
+.profile-container {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+.profile-options {
+  align-items: center;
+  background-color: var(--dark-bg);
+  display: flex;
+  flex-direction: column;
+  padding: 5px 0;
+  position: absolute;
+  right: 0;
+  top: var(--header-height);
+  width: 130px;
+}
